@@ -10,6 +10,7 @@
 body {
     font-family: 'Roboto', sans-serif;
     letter-spacing: 0.04em;
+    font-size: 16px;
 }
 
 /* main */
@@ -23,15 +24,68 @@ main {
     height: calc(100% - 90px);
 }
 
-.navbar-lat {
+/* Menu laterale */
+.menu-lat {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0 10px;
     height: 100%;
-    width: 300px;
-    background-color: red;
+    width: 280px;
+    background-color: #111;
 }
 
+.menu-lat #logo {
+    margin: 20px 0;
+    height: 40px;
+}
+
+.menu-lat ul {
+    list-style: none;
+}
+
+.menu-lat a {
+    display: inline-block;
+    padding: 5px 0;
+    width: 100%;
+    text-decoration: none;
+    color: #adb3b3;
+}
+
+.menu-lat .playlist {
+    margin-top: 20px;
+}
+
+.menu-lat .playlist li:first-child {
+    font-weight: bold;
+    color: #fff;
+}
+
+.menu-lat .playlist .fas {
+    padding: 5px 0;
+    padding-right: 5px;
+    font-size: 36px;
+    vertical-align: middle;
+}
+
+
+
+.menu-lat .menu-bottom .user {
+    font-weight: bold;
+    color: #fff;
+}
+
+.menu-lat .menu-bottom .fas {
+    font-size: 24px;
+    color: #adb3b3;
+    vertical-align: middle;
+}
+
+
+/* Contenuto */
 .content {
     height: 100%;
-    width: calc(100% - 300px);
+    width: calc(100% - 280px);
     background-color: #aaa;
 }
 
