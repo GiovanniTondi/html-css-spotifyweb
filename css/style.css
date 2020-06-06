@@ -25,14 +25,18 @@ main {
 }
 
 /* Menu laterale */
-.menu-lat {
+.menu-lat  {
     display: flex;
-    flex-direction: column;
+    flex-flow: column ;
     justify-content: space-between;
     padding: 0 10px;
     height: 100%;
     width: 280px;
-    background-color: #111;
+    background-color: #000;
+}
+
+.menu-lat nav {
+    /* overflow: hidden; */
 }
 
 .menu-lat #logo {
@@ -45,7 +49,7 @@ main {
 }
 
 .menu-lat li img {
-    max-height: 25px;
+    height: 25px;
     vertical-align: middle;
 }
 
@@ -58,12 +62,15 @@ main {
 }
 
 .menu-lat .playlist {
+    /* width: 100%; */
     margin-top: 20px;
+    font-weight: 500;
+    color: #fff;
 }
 
-.menu-lat .playlist li:first-child {
-    font-weight: bold;
-    color: #fff;
+.menu-lat .playlist ul {
+    height: 100%;
+    overflow-y: scroll;
 }
 
 .menu-lat .playlist .fas {
@@ -71,6 +78,17 @@ main {
     padding-right: 5px;
     font-size: 36px;
     vertical-align: middle;
+}
+
+.menu-lat .menu-bottom {
+    display: flex;
+    /* height: 50%; */
+    width: 10%;
+    align-self: flex-end;
+}
+
+.menu-lat .menu-bottom ul {
+    align-self: flex-end;
 }
 
 .menu-lat .menu-bottom .download a {
@@ -83,7 +101,7 @@ main {
 
 .menu-lat .menu-bottom .user {
     margin: 5px 0;
-    font-weight: bold;
+    font-weight: 500;
     color: #fff;
 }
 
@@ -96,9 +114,102 @@ main {
 
 /* Contenuto */
 .content {
+    padding: 100px 20px 0;
     height: 100%;
     width: calc(100% - 280px);
-    background-color: #aaa;
+    background-color: #121212;
+    color: #fff;
+}
+
+.content h2 {
+    font-size: 28px;
+    font-weight: 800;
+}
+
+.head-upgrade {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: calc(100% - 280px);
+    height: 90px;
+    background-color: rgba(0,0,0,.5);
+}
+
+.head-upgrade a {
+    text-decoration: none;
+}
+
+.head-upgrade .btn {
+    position: absolute;
+    top: 20px;
+    right: 10px;
+    display: inline-block;
+    padding: 10px 30px;
+    text-align: center;
+    color: #fff;
+    border: solid 1px #fff;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 500;
+    opacity: 1;
+}
+
+/* menu-link superiore */
+.menu-link {
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+.menu-link ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    list-style: none;
+}
+
+.menu-link li {
+    padding: 5px 15px;
+}
+
+.menu-link a {
+    text-decoration: none;
+    color: #777879;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.menu-link .active {
+    display: block;
+    width: 50%;
+    margin: 2px auto;
+    border-top: solid 2px #11f513;
+}
+
+/* Recently played */
+.recently-played {
+    margin: 50px 0;
+}
+
+/* ALBUM */
+.album {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 15px 0;
+}
+
+.album .item {
+    text-align: center;
+    padding: 15px;
+    width: 300px;
+}
+
+.album .item img {
+    /* max-width: 100%; */
+    max-height: 250px;
+}
+
+.album .item h3 {
+    max-width: 100%;
 }
 
 /* footer */
