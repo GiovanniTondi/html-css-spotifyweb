@@ -27,17 +27,23 @@ main {
 /* Menu laterale */
 .menu-lat  {
     display: flex;
-    flex-flow: column ;
+    flex-flow: column;
     justify-content: space-between;
     padding: 0 10px;
-    height: 100%;
-    width: 280px;
+    max-height: 100%;
+    width: 250px;
     background-color: #000;
+    min-height: 0;
+    overflow: hidden;
 }
 
 .menu-lat #logo-big {
     margin: 20px 0;
     height: 40px;
+}
+
+.menu-lat #logo-small {
+    display: none;
 }
 
 .menu-lat ul {
@@ -58,16 +64,17 @@ main {
 }
 
 .menu-lat .playlist {
-    /* width: 100%; */
     margin-top: 20px;
     font-weight: 500;
     color: #fff;
+    min-height: 0;
+    height: 100%;
+    overflow-y: hidden;
 }
 
 .menu-lat .playlist ul {
-    height: 100%;
-    overflow: hidden;
     overflow-y: auto;
+    height: 75%;
 }
 
 .menu-lat .playlist .fas {
@@ -77,23 +84,13 @@ main {
     vertical-align: middle;
 }
 
-.menu-lat .menu-bottom {
-    display: flex;
-    /* height: 50%; */
-    width: 10%;
-    align-self: flex-end;
-}
-
-.menu-lat .menu-bottom ul {
-    align-self: flex-end;
-}
 
 .menu-lat .menu-bottom .download a {
     font-size: 12px;
 }
 
 .menu-lat .menu-bottom .download img {
-    max-height: 15px;
+    height: 17px;
 }
 
 .menu-lat .menu-bottom .user {
@@ -108,12 +105,16 @@ main {
     vertical-align: middle;
 }
 
+.menu-lat a:hover {
+    color: #fff;
+}
+
 
 /* Contenuto */
 .content {
     padding: 100px 20px 0;
     height: 100%;
-    width: calc(100% - 280px);
+    width: calc(100% - 250px);
     background-color: #121212;
     color: #fff;
     overflow-y: auto;
@@ -135,7 +136,7 @@ main {
     position: fixed;
     top: 0;
     right: 0;
-    width: calc(100% - 280px);
+    width: calc(100% - 250px);
     height: 90px;
     background-color: rgba(0,0,0,.5);
     z-index: 9;
@@ -208,7 +209,7 @@ main {
 .album {
     display: flex;
     flex-wrap: wrap;
-    margin-top: 25px;
+    margin-top: 15px;
     width: 100%;
 }
 
@@ -217,11 +218,13 @@ main {
 }
 
 .album .item {
+    margin-top: 10px;
     padding-right: 10px;
     text-align: center;
-    min-width: 150px;
-    max-width: 300px;
-    width: calc(100% / 6);
+    min-width: 250px;
+    max-width: 290px;
+    width: 16%;
+    flex: 1;
 }
 
 .album .item:hover .layover {
@@ -256,6 +259,11 @@ main {
     max-width: 100%;
 }
 
+.popular-artists .image img,
+.popular-artists .image .layover {
+    border-radius: 50%;
+}
+
 /* footer */
 footer {
     display: flex;
@@ -269,7 +277,7 @@ footer {
 footer .brano {
     padding: 0 10px;
     max-height: 90px;
-    max-width: 280px;
+    max-width: 250px;
     flex-grow: 1;
     color: #fff;
     font-size: 12px;
@@ -313,7 +321,7 @@ footer .brano .like {
 }
 
 footer .brano .like .far {
-    padding-left: 10px;
+    padding-left: 1%;
 }
 
 footer .brano .like .far:hover {
@@ -322,8 +330,8 @@ footer .brano .like .far:hover {
 }
 
 footer .player {
-    flex-grow: 2;
-    min-width: 200px;
+    flex-grow: 3;
+    min-width: 155px;
     color: #fff;
     text-align: center;
 }
@@ -354,8 +362,9 @@ footer .player .time {
 
 footer .tools {
     flex-grow: 1;
-    min-width: 200px;
-    max-width: 280px;
+    flex-basis: 33%;
+    /* min-width: 200px; */
+    max-width: 250px;
     color: #fff;
     text-align: center;
 }
@@ -418,7 +427,95 @@ footer .slider .bar {
 }
 /* /SLIDER */
 
+/* Media smartphoen */
+@media all and (max-width: 790px) {
 
+    .menu-lat  {
+        width: 50px;
+        text-align: center;
+    }
+
+    .menu-lat #logo-big {
+        display: none;
+    }
+
+    .menu-lat #logo-small {
+        display: inline-block;
+        margin-bottom: 10px;
+    }
+
+    .menu-lat span {
+        display: none;
+    }
+
+    .menu-lat a {
+        display: inline-block;
+        padding: 5px 0;
+        width: 100%;
+        text-decoration: none;
+        color: #adb3b3;
+    }
+
+    .menu-lat .playlist {
+        display: none;
+    }
+
+    .menu-lat .menu-bottom .download img {
+        margin-left: -3px;
+    }
+
+    .menu-lat .menu-bottom hr {
+        display: none;
+    }
+
+    .head-upgrade {
+        width: calc(100% - 50px);
+    }
+
+    .content {
+        height: 100%;
+        width: calc(100% - 50px);
+    }
+
+    footer .brano {
+        flex-grow: 0;
+    }
+
+    footer .brano .like {
+        width: 15%;
+        margin-top: 25px;
+        font-size: 15px;
+        float: left;
+    }
+
+    /* footer .player .control .fas {
+        font-size: 14px;
+    }
+
+    footer .player .time .slider {
+        width: 40%;
+    }
+
+    footer .player .time span {
+        font-size: 12px;
+    }
+
+    footer .player .control .fa-play-circle {
+        margin: 0 5px;
+        font-size: 24px;
+    }
+
+    footer .tools .slider {
+        width: 40%;
+    }
+
+    footer .tools .fas {
+        margin: 0 1%;
+        font-size: 12px;
+    } */
+
+
+}
 
 
 /*  */
